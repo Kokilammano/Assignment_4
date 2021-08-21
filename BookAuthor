@@ -1,0 +1,86 @@
+package Assignment_4;
+class Author{
+	static String name;
+	static String emailid;
+	static char gender;
+	//parameterized constructor
+	Author(String name,String emailid,char gender){
+		this.name=name;
+		this.emailid=emailid;
+		this.gender=gender;
+	}
+	static String getName(){
+		return name;
+	}
+	static String getEmailId(){
+		return emailid;
+	}
+	static char getGender(){
+		return gender;
+	}
+	void setName(String name){
+		this.name=name;
+	}
+	void setEmailId(String emailid){
+		this.emailid=emailid;
+	}
+	void setGender(char gender){
+		this.gender=gender;
+	}
+	
+	
+}
+class Book{
+	String name;
+	String author;
+	double price;
+	int quantity;
+	//parameterized constructor
+	Book(String name,String author,double price,int quantity){
+		this.name=name;
+		this.author=author;
+		this.price=price;
+		this.quantity=quantity;
+	}
+	String getName(){
+		return name;
+	}
+	String getAuthor(){
+		return author;
+	}
+	double getPrice(){
+		return price;
+	}
+	int getQuantity(){
+		return quantity;
+	}
+	void setName(String name){
+		this.name=name;
+	}
+	void setAuthor(String author){
+		this.author=author;
+	}
+	void setPrice(double price){
+		this.price=price;
+	}
+	void setQuantity(int quantity){
+		this.quantity=quantity;
+	}
+	//display author details
+	void displayAuthorDetails(){
+		System.out.println("Author name=" +Author.getName());
+		System.out.println("Author email=" +Author.getEmailId());
+		System.out.println("Author gender=" +Author.getGender());
+	}
+	
+}
+public class Tester {
+
+	public static void main(String[] args) {
+		//create object for class Book and Author
+		Book book1=new Book("Effective Java","author1",45.00,15);
+		Author author1=new Author("Joshua Bloch","Joshua@email.com",'M');
+		book1.displayAuthorDetails();
+	}
+
+}
