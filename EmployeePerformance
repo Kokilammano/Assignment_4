@@ -1,0 +1,58 @@
+package Assignment_4;
+
+import java.util.Scanner;
+
+class Employee{
+	private int point;
+	int getPoint(){
+		return point;
+	}
+	void setPoint(int point){
+		this.point=point;
+	}
+}
+class PerformanceRating{
+	private static int Outstanding=5;
+	private static int Good=4;
+	private static int Average=3;
+	private static int Poor=2;
+	//calculate performance of the employee
+	static int calculatePerformance(int point){
+		while(point<100){
+			if(point>80 && point<100){
+				return Outstanding;
+			}
+			else if(point>=60){
+				return Good;
+			}
+			else if(point>=50){
+				return Average;
+			}
+			else{
+				return Poor;
+			}
+		
+		}
+		return 0;
+	}
+}
+public class PerformanceCalculator {
+
+	public static void main(String[] args) {
+		//create object for Employee
+		Employee employee=new Employee();
+		Scanner sc=new Scanner(System.in);
+		int arr[]=new int[3];
+		System.out.println("Enter three employess point");
+		for(int i=0;i<3;i++){
+			arr[i]=sc.nextInt();
+		}
+		//display the ratings
+		System.out.println("Rating for the employees are");
+		for(int i=0;i<3;i++){
+			System.out.println(PerformanceRating.calculatePerformance(arr[i]));
+		}
+		
+	}
+
+}
